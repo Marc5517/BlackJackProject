@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BlackJackProject.Lists
 {
-    internal class CardList
+    public class CardList
     {
         /// <summary>
         /// A class that could be used as reference to Program.cs, just in case.
