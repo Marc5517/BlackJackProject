@@ -252,11 +252,13 @@ namespace BlackJackProject
             while (Console.ReadKey(true).Key == ConsoleKey.Y)
             {
                 Console.WriteLine("Player " + player.Name + " has " + player.TotalPoints + " points.");
-                Console.Write("\nPress 'H' to Hit you a new card or 'S' to stand. ");
+                Console.Write("\nPress 'H' to Hit you a new card or 'S' to stand.\n");
 
                 ///This loop only begins when a player's total points are at 0 and when they click at 'H'.
                 while (player.TotalPoints < 21)
                 {
+                    int index = random.Next(list.Count);
+
                     ///If a player presses anything other than 'H', the player stands.
                     while (Console.ReadKey(true).Key != ConsoleKey.H)
                     {
@@ -272,27 +274,25 @@ namespace BlackJackProject
                         }
                     }
 
-                    int index = random.Next(list.Count);
-                    
+                    Console.WriteLine("Player: Hit me");
+                    Console.WriteLine("Dealer: " + list[index].Name + " of " + list[index].Suit);
+
                     ///If the player gets a joker, the player's points become 21.
-                    ///If it's not a joker, then it's just a regular card.
                     if (list[index].Name.Equals("Joker"))
                     {
                         Console.WriteLine("Player: Hit me");
                         Console.WriteLine("Dealer: You got a Joker!");
                         player.TotalPoints = 21;
                     }
-                    else
-                    {
-                        Console.WriteLine("Player: Hit me");
-                        Console.WriteLine("Dealer: " + list[index].Name + " of " + list[index].Suit);
-                    }
+                    
+                    
+                    
 
                     ///If the player gets an Ace, then they gain 10 extra points, unless they have more than 10 total points.
-                    if (list[index].Name.Equals("Ace") && player.TotalPoints < 11)
+                    if (list[index].Name.Equals("Ace") && player.TotalPoints <= 11)
                     {
-                        list[index].Points = list[index].Points + 10;
-                        Console.WriteLine("Dealer: That gives " + list[index].Points);
+                        player.TotalPoints = player.TotalPoints + 10;
+                        Console.WriteLine("Dealer: That gives " + (list[index].Points + 10));
                     }
 
                     player.ReceivePoints(list[index]);
