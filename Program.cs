@@ -262,7 +262,7 @@ namespace BlackJackProject
                     ///If a player presses anything other than 'H', the player stands.
                     while (Console.ReadKey(true).Key != ConsoleKey.H)
                     {
-                        Console.WriteLine("Player: Stand.");
+                        Console.WriteLine("\nPlayer: Stand.");
                         ///The loop stops once the dealer has reached the limit of 17 points.
                         while (playerD.TotalPoints < 17)
                         {
@@ -274,8 +274,7 @@ namespace BlackJackProject
                         }
                     }
 
-                    Console.WriteLine("Player: Hit me");
-                    Console.WriteLine("Dealer: " + list[index].Name + " of " + list[index].Suit);
+                    Console.WriteLine("\nPlayer: Hit me");
 
                     ///If the player gets a joker, the player's points become 21.
                     if (list[index].Name.Equals("Joker"))
@@ -284,12 +283,16 @@ namespace BlackJackProject
                         Console.WriteLine("Dealer: You got a Joker!");
                         player.TotalPoints = 21;
                     }
+                    else
+                    {
+                        Console.WriteLine("Dealer: " + list[index].Name + " of " + list[index].Suit);
+                    }
 
                     ///If the player gets an Ace, then they gain 10 extra points, unless they have more than 10 total points.
-                    if (list[index].Name.Equals("Ace") && player.TotalPoints <= 11)
+                    if (list[index].Name.Equals("Ace") && player.TotalPoints < 11)
                     {
                         player.TotalPoints = player.TotalPoints + 10;
-                        Console.WriteLine("Dealer: That gives " + (list[index].Points + 10));
+                        Console.WriteLine("Dealer: Since your total points are lower than 11, that gives " + (list[index].Points + 10));
                     }
 
                     player.ReceivePoints(list[index]);
