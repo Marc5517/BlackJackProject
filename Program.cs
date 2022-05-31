@@ -284,9 +284,6 @@ namespace BlackJackProject
                         Console.WriteLine("Dealer: You got a Joker!");
                         player.TotalPoints = 21;
                     }
-                    
-                    
-                    
 
                     ///If the player gets an Ace, then they gain 10 extra points, unless they have more than 10 total points.
                     if (list[index].Name.Equals("Ace") && player.TotalPoints <= 11)
