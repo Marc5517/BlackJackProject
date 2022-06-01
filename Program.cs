@@ -279,7 +279,6 @@ namespace BlackJackProject
                     ///If the player gets a joker, the player's points become 21.
                     if (list[index].Name.Equals("Joker"))
                     {
-                        Console.WriteLine("Player: Hit me");
                         Console.WriteLine("Dealer: You got a Joker!");
                         player.TotalPoints = 21;
                     }
