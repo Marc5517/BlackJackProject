@@ -269,7 +269,8 @@ namespace BlackJackProject
                             Console.WriteLine("\nPlayer: Stand.");
                             
                             int index2 = random.Next(list.Count);
-                            Console.WriteLine("Dealer: " + list[index2].Name + " of " + list[index2].Suit);
+                            card.ShowCards(list[index2].Name, list[index2].Suit);
+                            //Console.WriteLine("Dealer: " + list[index2].Name + " of " + list[index2].Suit);
 
                             playerD.ReceivePoints(list[index2]);
                             Console.WriteLine("Dealer: That's " + playerD.TotalPoints);
