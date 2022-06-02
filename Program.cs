@@ -278,7 +278,7 @@ namespace BlackJackProject
 
                     Console.WriteLine("\nPlayer: Hit me");
                     
-                    card.PickingJoker(list[index].Name, list[index].Suit, player);
+                    card.PickingJoker(list[index], player);
 
                     //if (list[index].Name.Equals("Joker"))
                     //{

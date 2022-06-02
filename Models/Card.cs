@@ -68,16 +68,16 @@ namespace BlackJackProject.Models
         /// <param name="name"></param>
         /// <param name="suit"></param>
         /// <param name="player"></param>
-        public void PickingJoker(string name, string suit, Player player)
+        public void PickingJoker(Card card, Player player)
         {
-            if (name.Equals("Joker"))
+            if (card.Name.Equals("Joker"))
             {
                 Console.WriteLine("Dealer: You got a Joker!");
                 player.TotalPoints = 21;
             }
             else
             {
-                ShowCards(name, suit);
+                ShowCards(card.Name, card.Suit);
                 //Console.WriteLine("Dealer: " + name + " of " + suit);
             }
         }
