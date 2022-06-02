@@ -276,7 +276,6 @@ namespace BlackJackProject
                             Console.WriteLine("Dealer: That's " + playerD.TotalPoints);
                         }
                     }
-
                     Console.WriteLine("\nPlayer: Hit me");
                     
                     card.PickingJoker(list[index], player);
@@ -307,6 +306,10 @@ namespace BlackJackProject
                 {
                     Console.WriteLine(player.Name + " has won!");
                 }
+                //else if (player.TotalPoints > playerD.TotalPoints && playerD.TotalPoints > 1)
+                //{
+                //    Console.WriteLine("He may not have reached 21, but his points were " + (player.TotalPoints - playerD.TotalPoints) + " points higher than the dealer's!");
+                //}
                 else
                 {
                     Console.WriteLine(player.Name + " has lost... since his total points are " + player.TotalPoints);

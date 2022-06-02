@@ -52,7 +52,7 @@ namespace BlackJackProject.Models
         }
 
         /// <summary>
-        /// Shows the card's name and suit
+        /// Shows the card's name and suit when picked.
         /// </summary>
         /// <param name="name"></param>
         /// <param name="suit"></param>
@@ -65,8 +65,7 @@ namespace BlackJackProject.Models
         /// If the card the dealer gives out turns out to be a joker, then player's total point become 21 automatically.
         /// If not, then it just shows the card.
         /// </summary>
-        /// <param name="name"></param>
-        /// <param name="suit"></param>
+        /// <param name="card"></param>
         /// <param name="player"></param>
         public void PickingJoker(Card card, Player player)
         {
