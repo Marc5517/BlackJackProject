@@ -10,7 +10,7 @@ namespace BlackJackProject.Lists
     public class CardList
     {
         /// <summary>
-        /// A class that could be used as reference to Program.cs, just in case.
+        /// A class that could be used as reference to Program.cs.
         /// </summary>
         public static List<Card> cards = new List<Card>()
         {
